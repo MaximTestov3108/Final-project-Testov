@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Movie buff</title>
+	<meta charset="utf-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}"/>
+	<script src="https://unpkg.com/@ungap/custom-elements-builtin"></script>
+	<script type="module" src="https://unpkg.com/x-frame-bypass"></script>
+</head>
+<body>
+	<header>
+		<div class="block flex flex-row align-items-center justify-content-between">
+			<div class="logo">
+				<p>Movie.B</p>
+			</div>
+			<div class="search flex justify-content-around align-items-center">
+				<form class="form flex justify-content-center align-items-center">
+					<div class="group">
+						<input id="input" type="text" name="name" required>
+						<span class="highlight"></span>
+						<span class="bar"></span>
+						<label>Название</label>
+					</div>
+					<!--button class="btn-search" onclick="searchFilms()">Найти</button-->
+				</form>
+
+			</div>
+			<a id="reg" type="button" class="a-reg flex align-items-center justify-content-center" href="{{url_for('form_sample')}}">Регистрация
+			</a>
+			<a id="log" type="button" class="a-reg flex align-items-center justify-content-center" href="{{url_for('login_form')}}">{{enter}}
+			</a>
+			<a id="cab" type="button" class="a-reg flex align-items-center justify-content-center" href="{{url_for('cabinet_form')}}">Личный кабинет
+			</a>
+			<a class="a-reg flex align-items-center justify-content-center"> {{name}}
+			</a>
+		</div>
+	</header>
+	<section>
+		<div class="main">
+			<div class="background">
+				<div class="black-slide"></div>
+				<!--video width="100%" height="100%" muted autoplay loop>
+					<source src="https://www.w3schools.com/html/mov_bbb.mp4" type="">
+					Ваш браузер не поддерживает ни один из форматов
+				</video-->
+				<!--iframe id="trailer" is="x-frame-bypass" src="https://widgets.kinopoisk.ru/discovery/trailer/167560?onlyPlayer=1&autoplay=1&cover=1&control=0&loop=1&muted=1" width="100%" height="100%"></iframe-->
+				<img id="background-poster" src="assets/images/poster1.png">
+			</div>
+			<div class="block flex flex-row align-items-center justify-content-around">
+				<div id="main-poster" class="main-poster"></div>
+				<div class="info flex flex-column">
+					<h2 id="title" class="pip install beautifulsoup4">Звёздные войны: Эпизод 3 — Месть Ситхов</h2>
+					<ul>
+						<li id="year" class="year">2005</li>
+						<li id="timeGenre">2:20 | фантастика, боевик, фэнтези, приключения</li>
+						<li id="raiting" class="raiting">8.1</li>
+					</ul>
+						<p id="description">Идёт третий год Войн клонов. Галактическая Республика, некогда бывшая спокойным и гармоничным государством, превратилась в поле битвы между армиями клонов, возглавляемых канцлером Палпатином, и армадами дроидов, которых ведёт граф Дуку, тёмный лорд ситхов. Республика медленно погружается во тьму. Лишь рыцари-джедаи, защитники мира и справедливости, могут противостоять злу, которое вскоре поглотит галактику. Но настоящая битва идёт в душе у молодого рыцаря-джедая Энакина, который разрывается между долгом джедая и любовью к своей жене, сенатору Падме Амидале. И от того, какое чувство в нём победит, зависит будущее всего мира.</p>
+					<a id="kinobtn" type="button" class="a-search flex align-items-center justify-content-center" href="{{url_for('comment_form')}}">Прокоментировать</a>
+				</div>
+			</div>
+		</div>
+		<div class="secondary">
+			<div id="filmList" class="block flex flex-row justify-content-between align-items-center">
+
+			</div>
+		</div>
+	</section>
+</body>
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</html>
